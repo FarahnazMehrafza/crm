@@ -155,6 +155,7 @@ class DetailView extends Component {
                     <Text>call</Text>
                     <Text>email</Text>
                     <Text>SMS</Text>
+                    </View>
                 </View>
             </ScrollView>
         </View>
