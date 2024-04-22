@@ -24,11 +24,11 @@ const styles = StyleSheet.create ({
     }
 })
 
-class AddPerson extends Component {
-    onAddPress() {
-        const {FirstName, lastName, phone, email, company, project, notes} = this.props;
+class UpdatePerson extends Component {
+    onUpdatePress() {
+        const {FirstName, lastName, phone, email, company, project, notes,_id} = this.props;
 
-        this.props.creatNewContact ({FirstName, lastName, phone, email, company, project, notes})
+        this.props.saveNewContact ({FirstName, lastName, phone, email, company, project, notes,_id})
 
         this.props.navigation.navigate('people');
     }
@@ -80,7 +80,7 @@ class AddPerson extends Component {
                        onChageText={value => this.props.formUpdate({ prop: 'notes', value})}
                     />
                     <View style={styles.addButton}>
-                        <Button title='Add' color="4db6ac" onPress={this.onAddPress.bind(this)}/>
+                        <Button title='Add' color="4db6ac" onPress={this.UpdatePress.bind(this)}/>
                 </View>
             </View>
         </ScrollView>
@@ -88,9 +88,9 @@ class AddPerson extends Component {
      }
     }
     const mapStateToProps = state => {
-        const { FirstName, lastName, phone, email, company, project, notes}= state;
-        return { FirstName, lastName, phone, email, company, project, notes} ;
+        const { FirstName, lastName, phone, email, company, project, notes, _id}= state;
+        return { FirstName, lastName, phone, email, company, project, notes, _id} ;
     }
 
-    export default connect (mapStateToProps, actions) (AddPerson);
+    export default connect (mapStateToProps, action) (UpdatePerson);
         
