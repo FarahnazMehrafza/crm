@@ -58,6 +58,37 @@ export default (state = initialState, action) => {     //reducers here
                         ...state,
                         ...action.newPerson
                     }
+                case 'ADD_Person':
+                    return {
+                        ...state,
+                        toUpdate: true,
+                        fisrtName :action.payload.firstName,   
+                        lasttName : action.payload.lastNameName,  
+                        phone : action.payload.phone, 
+                        email : action.payload.mail,
+                        company : action.payload.company,
+                        project : action.payload.project,
+                        notes : action.payload.notes,
+                        _id : action.payload._id,
+                    }
+
+                    case 'SAVE_CONTACT' :
+                        return {
+                            ...state,
+                            toUpdate: false,
+                            detailView: false,
+                            fisrtName :'',   
+                    lasttName : '',  
+                    phone : '', 
+                    email : '',
+                    company : '',
+                    project : '',
+                    notes : '',
+                    _id :'', 
+
+                        }
+
+
 
 
 
