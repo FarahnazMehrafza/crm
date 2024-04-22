@@ -40,6 +40,7 @@ class Peoplelist extends Component {
 
            
         )
+    }
 }
 
 const mapStatToProps = state => { 
