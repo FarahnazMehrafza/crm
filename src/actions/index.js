@@ -11,10 +11,9 @@ export const selectperson = (peopleId) => {
 export const noneSelected = () => {
     return {
         type:'NONE_SELETED'
-    
     }
 }
- 
+
 export const createNewContact = ({ FirstName, lastName, phone, email, company, project, notes }) => {
     return(dispatch) => {
         fetch('http//127.0.0.1:3000/contact', {
@@ -42,6 +41,42 @@ export const createNewContact = ({ FirstName, lastName, phone, email, company, p
         .catch(error => console.log(error))
     }
 }
+
+export const  updateContact = (person) => {
+   return {
+    type: 'UPDATE_Contact',
+    payload: person,
+   } 
+}
+
+export const saveContact= ({ FirstName, lastName, phone, email, company, project, notes, _id }) => {
+    return(dispatch) => {
+        fetch('http//127.0.0.1:3000/contac/${_id}', {
+            method: 'PUT',
+            body: JSON.string ({
+            'fisrtName' : FirstName,   
+            'lasttName' : lastName,  
+            'phone' : phone,  
+            'email' : email,
+            'company' : company,
+            'project' : project,
+            'notes' : notes,
+            }),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        .then (() => {
+            dispatch({ type: 'SAVE_CONTACT'});
+        })
+        .then(() => {
+            dispatch(loadInitialContacts());
+        })
+        .catch(error => console.log(error))
+    }
+}
+
 
 export const loadInitialContacts = () => {  
    return(dispatch) =>{
