@@ -1,15 +1,15 @@
 import React,{Component} from "react";
-import { View,StyleSheet, ScrollView, Text, Image , TouchableOpacity, StyleSheet} from "react-native";
+import { View, StyleSheet, ScrollView, Text, Image, TouchableOpacity } from 'react-native';
 import { connect } from "react-redux";
-import EvilIcon from react-native-vector-icons/EvilIcon;
+import EvilIcon from 'react-native-vector-icons/EvilIcons';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import SimpleIcon from 'react-native-vector-icons/SimpleLineIcons';
 import * as actions from '../actions';
 import { MaterialBottomTabView } from "@react-navigation/material-bottom-tabs";
-import { getRightStyles } from "react-native-paper/lib/typescript/components/List/utils";
+import { getRightStyles } from "react-native-paper";
 import { stat } from "fs";
 
-const StyleSheet = StyleSheet.create({
+const Styles= StyleSheet.create({
     title: {
         top: -75,
         left: 100,

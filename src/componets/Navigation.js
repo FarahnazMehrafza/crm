@@ -1,42 +1,49 @@
-import { createMaterialBottomTabNavigator } from "domain";
-import { Icon } from "react-native-vector-icons/EvilIcons";
-import CompanyList from './CompanyList';
-import AddPerson from './AddPerson';
+import React from 'react';
+import { View, Text } from 'react-native';
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
+import Icon from 'react-native-vector-icons/EvilIcons'; // Assuming you're using EvilIcons
 
+// Import your screen components
+import PeopleList from './PeopleList';
+import AddPerson from './AddPerson';
+import CompanyList from './CompanyList';
+
+// Create bottom tab navigator
 const Tab = createMaterialBottomTabNavigator();
 
-const Navigation = () =>{
-    return(
-        <Tab.Navigation
-            inialRoutName='People'
-            activeColor='#FF7043'
-            barStyle={{ backgroundColor:'#4DB6AC'}}
-        >
-            <Tab.Screen name='People' component={Peoplelist}
-              options= {{
-                   tabBarLabel: 'People',
-                   tabBarIcon: ({ color }) => (
-                    <Icon name={'user'} size={30} color={color} />
-                   ),
-              }}/>
-              
-            <Tab.Screen name='Add' component={AddPerson}
-              options= {{
-                   tabBarLabel: 'Add',
-                   tabBarIcon: ({ color }) => (
-                    <Icon name={'plus'} size={30} color={color} />
-                   ),
-              }}/>
-
-            <Tab.Screen name='Company' component={Companylist}
-              options= {{
-                   tabBarLabel: 'Company',
-                   tabBarIcon: ({ color }) => (
-                    <Icon name={'archive'} size={30} color={color} />
-                   ),
-              }}/>
-           </Tab.Navigation>    
-    )
-}
+const Navigation = () => {
+  return (
+    <Tab.Navigator
+      initialRouteName="People"
+      activeColor="#FF7043"
+      barStyle={{ backgroundColor: '#4DB6AC' }}
+    >
+      <Tab.Screen
+        name="People"
+        component={PeopleList}
+        options={{
+          tabBarLabel: 'People',
+          tabBarIcon: ({ color }) => <Icon name="user" size={30} color={color} />,
+        }}
+      />
+      <Tab.Screen
+        name="Add"
+        component={AddPerson}
+        options={{
+          tabBarLabel: 'Add',
+          tabBarIcon: ({ color }) => <Icon name="plus" size={30} color={color} />,
+        }}
+      />
+      <Tab.Screen
+        name="Company"
+        component={CompanyList}
+        options={{
+          tabBarLabel: 'Company',
+          tabBarIcon: ({ color }) => <Icon name="archive" size={30} color={color} />,
+        }}
+      />
+    </Tab.Navigator>
+  );
+};
 
 export default Navigation;

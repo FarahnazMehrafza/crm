@@ -3,9 +3,11 @@ import { View, StyleSheet, FlatList } from "react-native";
 import { connect } from 'react-redux';
 import PagerItem from "./PeopleItem";
 import PeopleDetail from './PeopleDetail';
-import { loadInitialContacts } from "../actions";
-import { Container } from "react-bootstrap/lib/Tab";
-import { Item } from "react-bootstrap/lib/Breadcrumb";
+import { loadInitialContacts } from "../actions/index";
+import { Container } from "react-bootstrap";
+import { Item } from 'react-bootstrap';
+import { Breadcrumb } from 'react-bootstrap';
+
 const style = StyleSheet.create() ({
     Container: {
         padding: 80,

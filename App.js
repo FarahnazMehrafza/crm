@@ -1,26 +1,22 @@
 import React from 'react';
-import { createStore} from 'redux';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-/* import { Button } from 'react-native/Libraries/Core'; */
 import { Provider } from 'react-redux';
-import { applyMiddleware } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from './reducers'; // Adjust the path according to your project structure
-import reducers from './src/reducers/PeopleReducer'
-import { NativeScreenContainer, NavigationContainer } from '@react-navigation/native';
-import Navigtion from './src/components/Navigation'
+import reducers from './src/reducers/PeopleReducer'; // Verify correct path to reducers
+import { NavigationContainer } from '@react-navigation/native';
+import { Navigation } from './src/componets/Navigation'; // Corrected import path for Navigation
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = createStore(reducers, applyMiddleware(thunk));
 
 export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Navigtion/>
-
+        <Navigation />
       </NavigationContainer>
-    </Provider>  );
+    </Provider>
+  );
 }
 
 const styles = StyleSheet.create({

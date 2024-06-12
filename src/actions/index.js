@@ -1,6 +1,5 @@
-import { error } from "console";
-import { json } from "stream/consumers";
-
+/* import { json } from "stream/consumers";
+ */
 export const selectperson = (peopleId) => {
    return {
       type: 'SELECTED_PERSON',

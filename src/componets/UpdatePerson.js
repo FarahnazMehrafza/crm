@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 import { Button, ThemeContext } from "@react-native-material/core";
 import * as action from '../actions';
 import { TextInput } from "react-native-paper";
-import { stat } from "fs";
-
+/* import { stat } from "fs";
+ */
 const styles = StyleSheet.create ({
     form: {
         flex: 1,

@@ -1,9 +1,9 @@
 import React,{Component} from "react";
 import {Text, View, StyleSheet, FlatList,Image, TouchableWithoutFeedbackBase } from "react-native";
 import { connect } from 'react-redux';
-import { Icon } from "react-native-vector-icons/Icon";
+import Icon from 'react-native-vector-icons/FontAwesome';
 import * as action from '../actions';
-import { Left } from "react-bootstrap/lib/Media";
+import { Left } from "react-bootstrap";
 const style = StyleSheet.create({
     title: {
         top: -60,
